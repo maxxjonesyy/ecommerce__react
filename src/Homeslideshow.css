@@ -1,0 +1,92 @@
+#homeslideshow {
+  display: flex;
+  justify-content: center;
+}
+
+.slideshow__container {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+.shop__button__container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 12%;
+  height: 100%;
+  z-index: 1;
+}
+
+.shop__button {
+  width: 12vw !important;
+  transition: 0.4s ease-in-out;
+  border-radius: 10px !important;
+  background-color: black !important;
+  font-size: 1.5vw !important;
+  opacity: 0.9 !important;
+  overflow: hidden !important;
+}
+
+.shop__button:hover {
+  background-color: white !important;
+  color: black !important;
+}
+
+.slideshow__container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.75;
+  animation: imageSlide;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-duration: 35s;
+  filter: grayscale(100);
+}
+
+@keyframes imageSlide {
+  0% {
+    transform: translateY(0%);
+  }
+
+  15% {
+    transform: translateY(0%);
+  }
+
+  33.3% {
+    transform: translateY(-100.25%);
+  }
+
+  48.3% {
+    transform: translateY(-100.25%);
+  }
+
+  82.9% {
+    transform: translateY(-200.5%);
+  }
+
+  66.9% {
+    transform: translateY(-200.5%);
+  }
+
+  100% {
+    transform: translateY(-301%);
+  }
+}
+
+@media (max-width: 1199.98px) {
+  .shop__button {
+    width: 20vw !important;
+    font-size: 3vw !important;
+  }
+}
+
+@media (min-width: 1199.98px) {
+  .shop__button {
+    width: 12vw !important;
+    font-size: 2vw !important;
+  }
+}
