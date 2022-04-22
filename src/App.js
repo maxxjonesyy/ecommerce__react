@@ -1,6 +1,4 @@
 import "./App.css";
-import React from "react";
-
 import Home from "./pages/Home.js";
 import About from "./pages/About.js";
 import Products from "./logic/Products";
@@ -14,19 +12,19 @@ import Gp from "./pages/Gp";
 import Se from "./pages/Se";
 import Ts from "./pages/Ts";
 import Basket from "./pages/Basket";
+import Contact from "./pages/Contact";
+import ContactSuccess from "./pages/ContactSuccess";
 
 import {
   BrowserRouter as Router,
   Route,
   BrowserRouter,
-  Routes
+  Routes,
 } from "react-router-dom";
 
 function App() {
   const { value, handleSelectChange } = useSelectSize();
   const { cart, updateCart } = usePushCart();
-
-  console.log(cart);
 
   return (
     <div id="App">
@@ -57,30 +55,67 @@ function App() {
               />
             }
           />
-          <Route path="/products/gp" element={<Gp />} />
-          <Route path="/products/gf" element={<Gf />} />
-          <Route path="/products/se" element={<Se />} />
-          <Route path="/products/ts" element={<Ts />} />
           <Route
-            path="/basket"
+            path="/products/gp"
             element={
-              <Basket
-                value=""
-                handleSelectChange=""
-                cart=""
-                updateCart=""
+              <Gp
+                value={value}
+                handleSelectChange={handleSelectChange}
+                updateCart={updateCart}
+                cart={cart}
                 products={Products}
               />
             }
           />
           <Route
+            path="/products/gf"
+            element={
+              <Gf
+                value={value}
+                handleSelectChange={handleSelectChange}
+                updateCart={updateCart}
+                cart={cart}
+                products={Products}
+              />
+            }
+          />
+          <Route
+            path="/products/se"
+            element={
+              <Se
+                value={value}
+                handleSelectChange={handleSelectChange}
+                cart={cart}
+                updateCart={updateCart}
+                products={Products}
+              />
+            }
+          />
+          <Route
+            path="/products/ts"
+            element={
+              <Ts
+                cart={cart}
+                value={value}
+                handleSelectChange={handleSelectChange}
+                updateCart={updateCart}
+                products={Products}
+              />
+            }
+          />
+          <Route
+            path="/basket"
+            element={<Basket value={value} cart={cart} products={Products} />}
+          />
+
+          <Route path="/contact" element={<Contact cart={cart} />} />
+          <Route path="/emailsent" element={<ContactSuccess cart={cart} />} />
+
+          <Route
             path="/about"
             element={<About cart={cart} updateCart={updateCart} />}
           />
-          <Route
-            path=""
-            element={<Home cart={cart} updateCart={updateCart} />}
-          />
+          <Route path="" element={<Home updateCart={updateCart} />} />
         </Routes>
       </BrowserRouter>
     </div>

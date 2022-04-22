@@ -1,24 +1,35 @@
 #basket {
-  max-width: 100vw;
-  max-height: 100vh;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .basket__header {
-  padding-top: 2rem;
+  padding-top: 6rem;
   display: flex;
+  align-items: center;
   justify-content: space-evenly;
+  text-transform: uppercase;
 }
 
 .basket__content__container {
-  padding: 2rem;
+  padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  margin-top: 2.5rem;
+  box-shadow: 0px 0px 1.5px gray;
+  flex: 1;
+}
+
+.product__size {
+  border: 1px solid grey;
+  padding: 5px;
 }
 
 .basket__image {
-  height: 15vh;
+  height: 25vh;
 }
 
 .basket__image img {
@@ -34,20 +45,74 @@
   padding: 2rem;
 }
 
-.amount__decrease,
-.amount__increase {
-  border-color: grey !important;
-  color: black !important;
+.remove__item {
+  background-color: black !important;
 }
 
 .cart__bottom__container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  padding: 2rem;
+  padding: 5rem;
+  width: 100%;
+}
+
+.cart__bottom__container h4 {
+  font-size: 1.5rem;
 }
 
 .empty__cart {
   border-color: black !important;
-  color: black !important;
+  background-color: black !important;
+}
+
+.emptyCart__display {
+  width: 100%;
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5rem;
+  font-size: 1.5rem;
+}
+
+.emptyCart_image {
+  filter: grayscale(1);
+  position: relative;
+  left: 40px;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 770px) {
+  .product__name,
+  .product__price,
+  .product__size {
+    font-size: 3vw;
+    margin: 12px;
+  }
+
+  .basket__header {
+    font-size: 3vw;
+  }
+
+  .cart__bottom__container {
+    flex-direction: column-reverse;
+    gap: 1rem;
+  }
+
+  .cart__bottom__container h4 {
+    font-size: 3vw;
+  }
+}
+
+@media screen and (max-width: 773px) {
+  .emptyCart__display {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .emptyCart_image {
+    position: relative;
+    left: 40px;
+    width: 300px;
+  }
 }

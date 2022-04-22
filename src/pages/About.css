@@ -1,4 +1,4 @@
-#about {
+.about__container {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -12,13 +12,13 @@
   flex-direction: row-reverse;
   gap: 2rem;
   padding-top: 1rem;
-  height: 110vh;
-  width: 100vw;
-  flex: 2;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .about__me__portrait {
-  max-width: 55vw;
+  max-width: 55%;
 }
 
 .about__me__portrait img {
@@ -57,11 +57,12 @@
   .about__me__container {
     flex-direction: column;
     justify-content: space-evenly;
-    width: 100vw;
+    width: 100%;
+    margin-top: 20px;
   }
 
   .about__me__portrait {
-    min-width: 101vw;
+    min-width: 101%;
   }
 
   .about__me__text {
@@ -69,10 +70,10 @@
   }
 
   .about__me__text h1 {
-    font-size: 30px;
+    font-size: 25px;
   }
 
   .about__me__text p {
-    font-size: 15px;
+    font-size: 14px;
   }
 }

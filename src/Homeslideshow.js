@@ -2,14 +2,14 @@ import { Button } from "@mui/material";
 import React from "react";
 import "./Homeslideshow.css";
 
-function Homeslideshow({ scrollToShop }) {
+function Homeslideshow(props) {
   return (
     <div id="homeslideshow">
       <div className="shop__button__container">
         <Button
           variant="contained"
           className="shop__button"
-          onClick={scrollToShop}
+          onClick={props.scrollToShop}
         >
           SHOP
         </Button>

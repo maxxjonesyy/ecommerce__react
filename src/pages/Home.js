@@ -3,18 +3,15 @@ import Homeslideshow from "../Homeslideshow";
 import Navbar from "../Navbar";
 import Shop from "../Shop";
 import "../pages/Home.css";
+import scrollToShop from "../logic/scrollToShop";
+import usePushCart from "../logic/usePushCart";
 
-function Home(props) {
-  function scrollToShop() {
-    window.scroll({
-      top: "2000",
-      behavior: "smooth"
-    });
-  }
+function Home() {
+  const { cart } = usePushCart();
 
   return (
     <div id="home">
-      <Navbar scrollToShop={scrollToShop} cart={props.cart} />
+      <Navbar cart={cart} scrollToShop={scrollToShop} />
       <Homeslideshow scrollToShop={scrollToShop} />
       <Shop />
     </div>

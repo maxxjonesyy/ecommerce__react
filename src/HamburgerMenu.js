@@ -16,7 +16,7 @@ function HamburgerModal(props) {
 
     window.scroll({
       top: "2000",
-      behavior: "smooth"
+      behavior: "smooth",
     });
 
     linksContainer.classList.add("hide");
@@ -81,7 +81,12 @@ function HamburgerModal(props) {
               About
             </Link>
           </li>
-          <li className="ham__link" onClick={hamCloseLinkClick}>
+          <li
+            className="ham__link"
+            onClick={() => {
+              window.location.pathname = "/contact";
+            }}
+          >
             Contact
           </li>
           <li className="ham__cart ham__link" onClick={hamCloseLinkClick}>

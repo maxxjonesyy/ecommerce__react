@@ -10,3 +10,21 @@
   -webkit-appearance: none;
   width: 0;
 }
+
+.swal-title {
+  color: black !important;
+}
+
+.alert_box {
+  max-width: 60%;
+}
+
+.alert_box button {
+  background-color: black;
+  transition: 0.2s ease-in-out;
+}
+
+.alert_box button:hover {
+  background-color: black !important;
+  transform: scale(0.95);
+}

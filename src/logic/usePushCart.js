@@ -5,16 +5,15 @@ function usePushCart() {
     const savedCart = JSON.parse(localStorage.getItem("cart") || "[]");
     return savedCart;
   }
-
   const [cart, setCart] = useState(returnStoredCart());
-
-  useEffect(() => {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }, [cart]);
 
   function updateCart(object) {
     return setCart([object, ...cart]);
   }
+
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
 
   function emptyCart() {
     if (cart.length !== 0) {
@@ -24,9 +23,16 @@ function usePushCart() {
     }
   }
 
-  function removeCartItem(array) {}
+  function removeCartItem(productToRemove) {
+    return setCart(cart.filter((product) => product !== productToRemove));
+  }
 
-  return { cart, updateCart, emptyCart, removeCartItem };
+  return {
+    cart,
+    updateCart,
+    emptyCart,
+    removeCartItem,
+  };
 }
 
 export default usePushCart;

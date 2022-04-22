@@ -8,9 +8,10 @@
 }
 
 .product__page__container {
+  position: relative;
   padding: 2rem;
   width: 70vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

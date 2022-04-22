@@ -24,15 +24,27 @@ function Navbar(props) {
                 Home
               </Link>
             </li>
+
             <li className="nav__link" onClick={props.scrollToShop}>
               Shop
             </li>
-            <li>
-              <Link className="nav__link" to={"/about"}>
-                About
-              </Link>
+
+            <li
+              className="nav__link"
+              onClick={() => {
+                window.location.pathname = "/about";
+              }}
+            >
+              About
             </li>
-            <li className="nav__link">Contact</li>
+            <li
+              className="nav__link"
+              onClick={() => {
+                window.location.pathname = "/contact";
+              }}
+            >
+              Contact
+            </li>
           </ul>
           <div className="basket__container">
             <Link to={"/basket"}>
